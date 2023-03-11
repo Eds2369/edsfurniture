@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+:root {
+    --dark-gray: hsl(0, 0%, 63%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --very-dark-gray: hsl(0, 0%, 27%);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    /* height: 100%;
+    object-fit: cover; */
+}
+
+body {
+    font-size: 12px;
+    line-height: 1.4;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    /* display: grid;
+    grid-template-columns: 30% 40% 30%; */
+}
+
+.top-row {
+    display: flex;
+    height: 480px;
+}
+
+.grid-box {
+    outline: 2px solid var(--black);
+}
+
+.grid-box-1 {
+    width: 60%;
+    position: relative;
+    grid-column: 1 / 3;
+}
+
+/* .grid-box-1 img {
+
+} */
+
+.grid-box-1 header {
+    /* width: 100%; */
+    color: var(--white);
+    position: absolute;
+    top: 65px;
+    left: 65px;
+}
+
+.grid-box-1 img {
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    /* width: 25%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+nav .logo {
+    margin-right: 50px;
+}
+
+nav .nav-links ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+nav .menu-btn {
+    cursor: pointer;
+    font-size: 2rem;
+    display: none;
+}
+
+#close-menu {
+    cursor: pointer;
+    font-size: 2rem;
+    display: none;
+}
+
+.nav-overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.nav-overlay.show {
+    display: block;
+}
+
+.grid-box-2 {
+    width: 40%;
+    position: relative;
+    padding: 4rem;
+}
+
+.grid-box-2 button {
+    cursor: pointer;
+    letter-spacing: 5px;
+    background: none;
+    border: 0;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.grid-box-2 button:hover {
+    color: var(--dark-gray);
+}
+
+.arrow-sliders {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.arrow-sliders #left-arrow, .arrow-sliders #right-arrow {
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--black);
+    padding: 2rem;
+}
+
+.arrow-sliders #right-arrow:hover,
+.arrow-sliders #left-arrow:hover {
+    background-color: var(--very-dark-gray);
+}
+
+.slide-box h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.slide-box p {
+    color: var(--dark-gray);
+    font-size: 1rem;
+}
+
+/* .slide-box.show {
+    display: block;
+} */
+
+.bottom-row {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.grid-box-4 {
+    padding: 2.5rem;
+}
+
+.grid-box-4 h3 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.grid-box-4 p {
+    color: var(--dark-gray);
+    font-size: 1rem;
+}
+
+.grid-box-5 img {
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1000px) {
+    img {
+        width: 100%;
+    }
+
+    header {
+        z-index: 15;
+    }
+
+    nav .logo {
+        margin: auto;
+    }
+
+    nav {
+        flex-direction: row-reverse;
+    }
+
+    nav .nav-links {
+        display: none;
+    }
+
+    nav .nav-links ul {
+        align-items: center;
+    }
+
+    nav .nav-links.show {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: -30px;
+        left: 0;
+        padding: 36px 1.25rem;
+        background-color: var(--white);
+        color: var(--black);
+    }
+
+    nav .menu-btn {
+        display: block;
+        margin-left: 30px;
+    }
+
+    #close-menu {
+        display: block;
+        margin: 0 1rem;
+    }
+
+    
+
+    .top-row {
+        flex-direction: column;
+        height: initial;
+    }
+
+    .grid-box-1, .grid-box-2 {
+        width: initial;
+    }
+
+    .grid-box-1 header {
+        width: 100%;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .grid-box-2 {
+        padding: 2.5rem;
+    }
+
+    .arrow-sliders {
+        top: -56px;
+        right: 0;
+        left: initial;
+        bottom: initial;
+    }
+
+    .arrow-sliders #left-arrow, .arrow-sliders #right-arrow {
+        padding: 1.25rem;
+    }
+
+    .bottom-row {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-box-3 {
+        grid-row: 1 / 2;
+    }
+
+    .grid-box-4 {
+        grid-row: 2 / 3;
+    }
+
+    .grid-box-5 {
+        grid-row: 3 / 4;
+    }
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
