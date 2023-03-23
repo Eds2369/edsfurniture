@@ -39,7 +39,7 @@ body {
 }
 
 .grid-box {
-    outline: 2px solid var(--black);
+/*     outline: 2px solid var(--black); */
 }
 
 .grid-box-1 {
